@@ -12,7 +12,7 @@ import org.kududb.{ColumnSchema, Schema, Type}
 object BasicExample {
   def main(args: Array[String]): Unit = {
 
-    val kuduMaster = "quickstart.cloudera"
+    val kuduMaster = args(0)
 
     println(" -- Starting ")
     val kuduClient = new KuduClient.KuduClientBuilder(kuduMaster).build()

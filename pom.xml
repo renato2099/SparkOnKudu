@@ -40,7 +40,8 @@
     <spark.version>1.5.0-cdh5.5.0-SNAPSHOT</spark.version>
     <scala.version>2.10.4</scala.version>
       <kafka.version>0.8.2.0-kafka-1.4.0-SNAPSHOT</kafka.version>
-    <scala.binary.version>2.10</scala.binary.version>
+      <scala.binary.version>2.10</scala.binary.version>
+      <kudu.version>0.6.0</kudu.version>
     <top.dir>${project.basedir}/..</top.dir>
   </properties>
 
@@ -177,7 +178,7 @@
               <enabled>true</enabled>
           </releases>
           <snapshots>
-              <enabled>false</enabled>
+              <enabled>true</enabled>
           </snapshots>
       </repository>
   </repositories>
@@ -295,12 +296,12 @@
       <dependency>
           <groupId>org.kududb</groupId>
           <artifactId>kudu-client</artifactId>
-          <version>0.1.0-SNAPSHOT</version>
+	  <version>${kudu.version}</version>
       </dependency>
       <dependency>
           <groupId>org.kududb</groupId>
           <artifactId>kudu-mapreduce</artifactId>
-          <version>0.1.0-SNAPSHOT</version>
+	  <version>${kudu.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.hadoop</groupId>

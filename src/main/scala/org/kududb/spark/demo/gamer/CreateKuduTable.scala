@@ -4,7 +4,7 @@ import java.util
 
 import org.kududb.{Schema, Type, ColumnSchema}
 import org.kududb.ColumnSchema.ColumnSchemaBuilder
-import org.kududb.client.{PartialRow, CreateTableBuilder, KuduClient}
+import org.kududb.client.{CreateTableOptions, PartialRow, KuduClient}
 
 object CreateKuduTable {
   def main(args:Array[String]): Unit = {
@@ -35,7 +35,8 @@ object CreateKuduTable {
       println("Deleting Table")
       kuduClient.deleteTable(tableName)
     }
-    val createTableBuilder = new CreateTableBuilder
+
+    val createTableBuilder = new CreateTableOptions
     val splitRow = schema.newPartialRow()
     splitRow.addString("gamer_id", "")
     createTableBuilder.addSplitRow(splitRow)
